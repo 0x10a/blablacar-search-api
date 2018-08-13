@@ -24,7 +24,7 @@ Download the latest version of Git for Windows [here](https://git-scm.com/downlo
 Once Git is up and running you can now clone this repository on your local machine.
 
 ```bash
-git clone 
+git clone https://github.com/0x10a/docker-symfony-environment
 ```
 
 ## 4. Set configuration
