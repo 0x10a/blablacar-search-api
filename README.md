@@ -23,26 +23,26 @@ Download the latest version of Git for Windows [here](https://git-scm.com/downlo
 
 Once Git is up and running you can now clone this repository on your local machine.
 
-    ```bash
-    git clone 
-    ```
+```bash
+git clone 
+```
 
 ## 4. Set configuration
 
 Create a `.env` from the `.env.dist` file. Change it according to your symfony application
 
-    ```bash
-    cp .env.dist .env
-    ```
+```bash
+cp .env.dist .env
+```
 
 ## 5. Build docker containers
 
 Build/run containers with (with and without detached mode)
 
-    ```bash
-    $ docker-compose build
-    $ docker-compose up -d
-    ```
+```bash
+$ docker-compose build
+$ docker-compose up -d
+```
 
 **Note:** To use a custom host name, you can edit hosts file (on Windows, edit C:\Windows\System32\drivers\etc\hosts)
 
@@ -50,30 +50,30 @@ Build/run containers with (with and without detached mode)
 
 Prepare your Symfony application.
 
-    1. Update app/config/parameters.yml
+1. Update app/config/parameters.yml
 
-        ```yml
-        # path/to/your/symfony-project/app/config/parameters.yml
-        parameters:
-            database_host: db
-        ```
+```yml
+# path/to/your/symfony-project/app/config/parameters.yml
+parameters:
+    database_host: db
+```
 
-    2. Composer install & create database
+2. Composer install & create database
 
-        ```bash
-        $ docker-compose exec php bash
-        $ composer install
-        # Symfony2
-        $ sf doctrine:database:create
-        $ sf doctrine:schema:update --force
-        # Only if you have `doctrine/doctrine-fixtures-bundle` installed
-        $ sf doctrine:fixtures:load --no-interaction
-        # Symfony3
-        $ sf3 doctrine:database:create
-        $ sf3 doctrine:schema:update --force
-        # Only if you have `doctrine/doctrine-fixtures-bundle` installed
-        $ sf3 doctrine:fixtures:load --no-interaction
-        ```
+```bash
+$ docker-compose exec php bash
+$ composer install
+# Symfony2
+$ sf doctrine:database:create
+$ sf doctrine:schema:update --force
+# Only if you have `doctrine/doctrine-fixtures-bundle` installed
+$ sf doctrine:fixtures:load --no-interaction
+# Symfony3
+$ sf3 doctrine:database:create
+$ sf3 doctrine:schema:update --force
+# Only if you have `doctrine/doctrine-fixtures-bundle` installed
+$ sf3 doctrine:fixtures:load --no-interaction
+```
 
 Now your Symfony application is up and running @ http://localhost
 
