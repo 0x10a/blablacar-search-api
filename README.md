@@ -13,7 +13,7 @@ ELK (Elasticsearch Logstash and Kibana)
 
 ## 1. Docker installation
 
-Docker for Windows is the Community Edition (CE) of Docker for Microsoft Windows. To download Docker for Windows, head to e[Docker Store](https://store.docker.com/editions/community/docker-ce-desktop-windows).
+Docker for Windows is the Community Edition (CE) of Docker for Microsoft Windows. To download Docker for Windows, head to the [Docker Store](https://store.docker.com/editions/community/docker-ce-desktop-windows).
 
 ## 2. Git installation
 
