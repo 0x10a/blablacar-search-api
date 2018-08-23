@@ -26,6 +26,7 @@ class DefaultController extends Controller
         $form->handleRequest($request);
         if (!$form->isSubmitted() && !$form->isValid()) {
             $trips = $this->blablacarService->getTrips();
+
             return $this->render('default/results.html.twig', array(
                 'trips' => $trips
             ));

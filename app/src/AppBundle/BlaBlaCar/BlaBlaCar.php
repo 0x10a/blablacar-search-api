@@ -20,7 +20,7 @@ class BlaBlaCar
      */
     public function __construct()
     {
-        $this->url = 'https://public-api.blablacar.com/api/v2/trips?key='.API_KEY.'&fn=Paris';
+        $this->url = 'https://public-api.blablacar.com/api/v2/trips?key='.$this::API_KEY.'&fn=Paris';
         $this->data = null;
     }
 
