@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+{% block title %}Test API BlaBlaCar {% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href='{{ asset('css/style.css') }}'>
+    <!-- Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:600,700" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+    <!-- Jumbotron -->
+    <div class="jumbotron jumbotron-main">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-lg-12">
+                    <h1 class="header1">
+                        <strong>Call BlaBlaCar API 2.0</strong><br> <small class="pull-right">Check Trips</small></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Form Container -->
+    <div class="container container_1">
+        <div class="row">
+            <div class="col-md-8">
+                    {{ form_start(form) }}
+                        <div class="row">
+                            <div class="col-md-6 form-group-container">
+                                <!-- departureCity -->
+                                <div class="form-group">
+                                    {{ form_label(form.departureCity) }}
+                                    {% if form_errors(form.departureCity)|length > 0 %}
+                                        <div class="alert alert-danger">
+                                            {{ form_errors(form.departureCity)|striptags }}
+                                        </div>
+                                    {% endif %}
+                                    {{ form_widget(form.departureCity,{'attr': {'class': 'form-control','placeholder':'Enter departure city'}}) }}
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                {% if form_errors(form)|length > 0 %}
+                                    <div class="alert alert-danger">
+                                        {{ form_errors(form)|striptags }}
+                                    </div>
+                                {% endif %}
+                                <!-- Submit -->
+                                <input type="submit" class="btn btn-primary pull-right" value="Search"/>
+                            </div>
+                        </div>
+                    {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href='{{ asset('css/style.css') }}'>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+{% endblock %}
+
+
+{% block body %}
+    <div class="jumbotron jumbotron-main">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-lg-12">
+                    <h1>Trips</h1>
+                    <ul>
+                        {% for trip in trips %}
+                        Test
+                            <li>
+                                <h3>From: {{ trip.departure_place.city_name }} To: {{ trip.departure_place.city_name }}</h3>
+                                <b>Price: {{ trip.price.string_value }}</b><br>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
